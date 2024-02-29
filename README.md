@@ -440,57 +440,57 @@ You probably don't want to touch this.
 #### Colors
 
 
-**DOTMATRIX_COLOR_DARK** *array<int> = (252 239 0 0  15   0)*
+**DOTMATRIX_COLOR_DARK** *array<int> = (252 239 0 0   7   0)*
 
 The color of dark segments.
 
 
-**DOTMATRIX_COLOR_LITE** *array<int> = (239 252 0 0   0  15)*
+**DOTMATRIX_COLOR_LITE** *array<int> = (239 252 0 0   0   7)*
 
 The color of light segments.
 
 
-**DOTMATRIX_COLOR_GLOW** *array<int> = (  0 252 1 0   0  15)*
+**DOTMATRIX_COLOR_GLOW** *array<int> = (255 239 1 0   0   7)*
 
 The color for bright elements.
 
 
-**DOTMATRIX_COLOR_NOTE** *array<int> = ( 15  33 0 0  15  12)*
+**DOTMATRIX_COLOR_NOTE** *array<int> = ( 15  33 0 0   7   4)*
 
 The color for notable elements.
 
 
-**DOTMATRIX_COLOR_WARN** *array<int> = (196 220 1 0   0  11)*
+**DOTMATRIX_COLOR_WARN** *array<int> = (196 220 1 0   0   3)*
 
 The color for elements related to a warning.
 
 
-**DOTMATRIX_COLOR_FAIR** *array<int> = (  0 244 0 0   0   8)*
+**DOTMATRIX_COLOR_FAIR** *array<int> = (  0 239 1 0   0   7)*
 
 The color for elements that are not very important.
 
 
-**DOTMATRIX_COLOR_PATH_SHORT** *array<int> = (252 239 0 0   0  15)*
+**DOTMATRIX_COLOR_PATH_SHORT** *array<int> = (252 239 0 0   0   7)*
 
 The color of the shorten path marker.
 
 
-**DOTMATRIX_COLOR_PATH_VCS** *array<int> = (252 239 0 1   0  15)*
+**DOTMATRIX_COLOR_PATH_VCS** *array<int> = (252 239 0 1   0   7)*
 
 The color of the VCS repository in the path.
 
 
-**DOTMATRIX_COLOR_PATH_LAST** *array<int> = (15 239 1 0   0  15)*
+**DOTMATRIX_COLOR_PATH_LAST** *array<int> = (15 239 1 0   0   7)*
 
 The color of the current directory.
 
 
-**DOTMATRIX_COLOR_LINE** *array<int> = (244 -1 0 0 15 -1)*
+**DOTMATRIX_COLOR_LINE** *array<int> = (244 -1 0 0  7 -1)*
 
 The color of the middle line.
 
 
-**DOTMATRIX_COLOR_MARK** *array<int> = (15 -1 0 0 15 -1)*
+**DOTMATRIX_COLOR_MARK** *array<int> = (15 -1 0 0  7 -1)*
 
 The color of the actual prompt mark.
 
@@ -505,12 +505,12 @@ The color for dark separators.
 The color for fair separators.
 
 
-**DOTMATRIX_COLOR_SEP_LITE** *array<int> = ( 15 -2 0 0 15 -2)*
+**DOTMATRIX_COLOR_SEP_LITE** *array<int> = ( 15 -2 0 0  7 -2)*
 
 The color for light separators.
 
 
-**DOTMATRIX_COLOR_LINE_START** *array<int> = (255 -1 1 0 15 -1)*
+**DOTMATRIX_COLOR_LINE_START** *array<int> = (255 -1 1 0  7 -1)*
 
 The color starting the gradient of the line of the middle section.
 Default is white.
@@ -519,7 +519,7 @@ Valus being linearly interpolated up to `DOTMATRIX_COLOR_LINE_END`,
 it is recommended to stick to aligned ANSI values (i.e. greys)
 
 
-**DOTMATRIX_COLOR_LINE_END** *array<int> = (232 -1 1 0 15 -1)*
+**DOTMATRIX_COLOR_LINE_END** *array<int> = (232 -1 1 0  7 -1)*
 
 The color ending the gradient of the line of the middle section.
 Default is black.
