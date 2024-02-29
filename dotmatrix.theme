@@ -1318,7 +1318,7 @@ __dotmatrix_make_sep_link_opposed() { # color
     lp_terminal_format "$dsfg" -1 0 0 -1 "$fbg"
     dotmatrix_sep+="${lp_terminal_format}${DOTMATRIX_LINK[_LP_FIRST_INDEX+1]}"
 
-    lp_terminal_format "$fg" -1 0 0 -1 "$fbg"
+    lp_terminal_format "$fg" -1 0 0 "$fbg" -1
     dotmatrix_sep+="${lp_terminal_format}${DOTMATRIX_LINK[_LP_FIRST_INDEX+2]}${DOTMATRIX_SPACE_FILL}"
 }
 
