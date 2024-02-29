@@ -1321,7 +1321,7 @@ __jolly_make_sep_link_opposed() { # color
     lp_terminal_format "$dsfg" -1 0 0 -1 "$fbg"
     jolly_sep+="${lp_terminal_format}${JOLLY_LINK[_LP_FIRST_INDEX+1]}"
 
-    lp_terminal_format "$fg" -1 0 0 -1 "$fbg"
+    lp_terminal_format "$fg" -1 0 0 "$fbg" -1
     jolly_sep+="${lp_terminal_format}${JOLLY_LINK[_LP_FIRST_INDEX+2]}${JOLLY_SPACE_FILL}"
 }
 
