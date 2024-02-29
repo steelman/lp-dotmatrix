@@ -460,7 +460,7 @@ The color for bright elements.
 The color for notable elements.
 
 
-**DOTMATRIX_COLOR_WARN** *array<int> = (196 220 1 0   0   3)*
+**DOTMATRIX_COLOR_WARN** *array<int> = (196 220 1 0   1   3)*
 
 The color for elements related to a warning.
 
