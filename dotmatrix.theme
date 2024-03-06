@@ -224,7 +224,7 @@ _lp_dotmatrix_make_header() {
     _lp_dotmatrix_make_header+="${_DOTMATRIX_MULTIPLEXER}"
     _lp_dotmatrix_make_header+="${_DOTMATRIX_HOSTNAME}"
     _lp_dotmatrix_make_header+="${_DOTMATRIX_FS}"
-    _lp_dotmatrix_make_header+="${_DOTMATRIX_PATH} "
+    _lp_dotmatrix_make_header+="${_DOTMATRIX_PATH}"
 
     if _lp_dirstack; then
         # Pseudo-recall the path section format.
@@ -1390,18 +1390,18 @@ __dotmatrix_make_sep_last() { # [has_warns [has_notes]]
     local has_warns="${1:-0}"
     local has_notes="${2:-0}"
     lp_terminal_format -3 -1 0 0 -3 -1
-    dotmatrix_sep="${lp_terminal_format}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
+    dotmatrix_sep="${lp_terminal_format}${DOTMATRIX_SPACE_FILL}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
     if [[ $has_warns -eq 0 && $has_notes -gt 0 ]] ; then
         # Use the background of COLOR_NOTE as a foreground here.
         lp_terminal_format "${DOTMATRIX_COLOR_NOTE[1]}"
-        dotmatrix_sep+="${lp_terminal_format}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
+        dotmatrix_sep+="${lp_terminal_format$}${DOTMATRIX_SPACE_FILL}{DOTMATRIX_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
     else
         if [[ $has_warns -gt 0 ]]; then
             # Use the background of COLOR_WARN as a foreground here.
             lp_terminal_format "${DOTMATRIX_COLOR_WARN[1]}"
-            dotmatrix_sep+="${lp_terminal_format}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+1]}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
+            dotmatrix_sep+="${lp_terminal_format}${DOTMATRIX_SPACE_FILL}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+1]}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
         else
-            dotmatrix_sep="${lp_terminal_format}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
+            dotmatrix_sep="${lp_terminal_format}${DOTMATRIX_SPACE_FILL}${DOTMATRIX_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
         fi
     fi
 }
