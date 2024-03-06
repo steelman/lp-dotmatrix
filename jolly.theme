@@ -227,7 +227,7 @@ _lp_jolly_make_header() {
     _lp_jolly_make_header+="${_JOLLY_MULTIPLEXER}"
     _lp_jolly_make_header+="${_JOLLY_HOSTNAME}"
     _lp_jolly_make_header+="${_JOLLY_FS}"
-    _lp_jolly_make_header+="${_JOLLY_PATH} "
+    _lp_jolly_make_header+="${_JOLLY_PATH}"
 
     if _lp_dirstack; then
         # Pseudo-recall the path section format.
@@ -1393,18 +1393,18 @@ __jolly_make_sep_last() { # [has_warns [has_notes]]
     local has_warns="${1:-0}"
     local has_notes="${2:-0}"
     lp_terminal_format -3 -1 0 0 -3 -1
-    jolly_sep="${lp_terminal_format}${JOLLY_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
+    jolly_sep="${lp_terminal_format}${JOLLY_SPACE_FILL}${JOLLY_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
     if [[ $has_warns -eq 0 && $has_notes -gt 0 ]] ; then
         # Use the background of COLOR_NOTE as a foreground here.
         lp_terminal_format "${JOLLY_COLOR_NOTE[1]}"
-        jolly_sep+="${lp_terminal_format}${JOLLY_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
+        jolly_sep+="${lp_terminal_format$}${JOLLY_SPACE_FILL}{JOLLY_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
     else
         if [[ $has_warns -gt 0 ]]; then
             # Use the background of COLOR_WARN as a foreground here.
             lp_terminal_format "${JOLLY_COLOR_WARN[1]}"
-            jolly_sep+="${lp_terminal_format}${JOLLY_ENDS[_LP_FIRST_INDEX+1]}${JOLLY_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
+            jolly_sep+="${lp_terminal_format}${JOLLY_SPACE_FILL}${JOLLY_ENDS[_LP_FIRST_INDEX+1]}${JOLLY_ENDS[_LP_FIRST_INDEX+1]}${NO_COL}"
         else
-            jolly_sep="${lp_terminal_format}${JOLLY_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
+            jolly_sep="${lp_terminal_format}${JOLLY_SPACE_FILL}${JOLLY_ENDS[_LP_FIRST_INDEX+0]}${NO_COL}"
         fi
     fi
 }
