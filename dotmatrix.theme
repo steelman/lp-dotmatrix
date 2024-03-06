@@ -875,7 +875,11 @@ __dotmatrix_activate_hostname() {
             hostname="${lp_hostname}"
             ;;
         *)
-            hostname+="${DOTMATRIX_HOST_LOCAL}"
+            if (( LP_HOSTNAME_ALWAYS != -1 )); then
+                hostname="${lp_hostname}"
+            else
+                hostname+="${DOTMATRIX_HOST_LOCAL}"
+            fi
             ;;
         esac
     else
