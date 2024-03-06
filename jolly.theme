@@ -878,7 +878,11 @@ __jolly_activate_hostname() {
             hostname="${lp_hostname}"
             ;;
         *)
-            hostname+="${JOLLY_HOST_LOCAL}"
+            if (( LP_HOSTNAME_ALWAYS != -1 )); then
+                hostname="${lp_hostname}"
+            else
+                hostname+="${JOLLY_HOST_LOCAL}"
+            fi
             ;;
         esac
     else
