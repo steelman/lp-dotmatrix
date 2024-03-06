@@ -1324,6 +1324,7 @@ __jolly_make_sep_link_opposed() { # color
 
 __jolly_make_sep_open() { # color
     local lp_terminal_format
+    jolly_sep=""
 
     local fg="${2-}"
     [[ -z $fg ]] && fg=-1
@@ -1344,6 +1345,7 @@ __jolly_make_sep_open() { # color
 
 __jolly_make_sep_dang() { # color
     local lp_terminal_format
+    jolly_sep=""
 
     local fg="${2-}"
     [[ -z $fg ]] && fg=-1
