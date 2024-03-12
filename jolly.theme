@@ -1264,18 +1264,18 @@ __jolly_make_sep_link() { # color
 
     local fg="${2-}"
     [[ -z $fg ]] && fg=-1
-    local fbg="${6-}"
-    [[ -z $fbg ]] && fbg=-1
+    local ffg="${6-}"
+    [[ -z $ffg ]] && ffg=-1
 
-    lp_terminal_format -3 -1 0 0 -1 "$fbg"
+    lp_terminal_format -3 -1 0 0 -1 -1
     jolly_sep+="${JOLLY_SPACE_VOID}${lp_terminal_format}${JOLLY_LINK[_LP_FIRST_INDEX]}"
 
     local dsfg="${JOLLY_COLOR_SEP_FAIR[_LP_FIRST_INDEX]}"
     [[ -z $dsfg ]] && dsfg=-1
-    lp_terminal_format "$dsfg" -1 0 0 -1 "$fbg"
+    lp_terminal_format "$dsfg" -1 0 0 -1 -1
     jolly_sep+="${lp_terminal_format}${JOLLY_LINK[_LP_FIRST_INDEX+1]}"
 
-    lp_terminal_format "$fg" -1 0 0 -1 "$fbg"
+    lp_terminal_format "$fg" -1 0 0 "$ffg" -1
     jolly_sep+="${lp_terminal_format}${JOLLY_LINK[_LP_FIRST_INDEX+2]}${JOLLY_SPACE_FILL}"
 }
 
